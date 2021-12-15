@@ -14,5 +14,8 @@ class Request{
         else 
             return null;
     }
+    public static function redirect($url = BASE_URL){
+        header("Location: ".BASE_URL.$url);
+    }
 }
 ?>
