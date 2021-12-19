@@ -2,7 +2,6 @@
 class Booking extends Controller{
     public function __construct(){
      Parent::__construct();
-     $this->loadModel('Booking');
     }
     public function index(){
       echo Session::get('name');

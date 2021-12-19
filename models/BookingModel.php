@@ -5,7 +5,7 @@ class BookingModel extends Model{
         Parent::__construct();
     }
     public function getBookingData(){
-        return $this->selectAll($this->table);
+        return $this->select($this->table);
     }
 }
 ?>
