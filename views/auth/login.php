@@ -7,11 +7,11 @@
         <input type="hidden" name="redirect" value="<?php echo Request::get('redirect')?>"/>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input id="email" type="text" placeholder="Email" class="form-control" name="email" />
+                <input required id="email" type="text" placeholder="Email" class="form-control" name="email" />
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input id="password" type="password" placeholder="Password" class="form-control" name="password" />
+                <input required id="password" type="password" placeholder="Password" class="form-control" name="password" />
             </div>
             <div class="form-group d-flex align-items-center">
                 <input class="btn btn-success" type="submit" name="login" value="Login" />

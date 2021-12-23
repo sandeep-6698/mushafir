@@ -11,5 +11,16 @@ class Controller{
             $this->model = new $model();
         }
     }
+    public function uploadFile($key, $path=''){
+            $file = Request::files($key);
+            print_r($file);
+            if($file){
+                $file_name = time()."_".$file['name'];
+                $file_path = "/uploads$path/$file_name";
+                $file = move_uploaded_file($file['tmp_name'], "public$file_path");
+                return $file ? $file_path : '';
+            }
+            return "";
+        }
 }
 ?>

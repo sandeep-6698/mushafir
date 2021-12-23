@@ -16,17 +16,19 @@ class Auth extends Controller{
                 if(md5($pass) == $auth['password']){
                     $this->loadModel('User');
                     $user = $this->model->me($auth['id'])[0];
+                    $user['role'] = $auth['role'];
                     Session::set('user', $user);
                     $redirect = Request::get('redirect');
                     Request::redirect($redirect);
                 }
                 else{
-                    // password invalid
-                    $this->view->loadView('/auth/login'); 
+                    $alert = ['type'=>'danger', 'message'=>"Invalid email or password!"];
+                    $this->view->loadView('/auth/login',['alert'=>$alert]); 
                 }
             }
             else{
-                $this->view->loadView('/auth/login');   
+                $alert = ['type'=>'danger', 'message'=>"Invalid email or password!"];
+                $this->view->loadView('/auth/login',['alert'=>$alert]);   
             }
         }
         else if(Session::get('user'))
@@ -42,13 +44,14 @@ class Auth extends Controller{
         if(!$auth){
             $this->model->register($userData);
             $auth = $this->model->findByEmail(Request::get('email'))[0];
+            $dp = $this->uploadFile('pf_image');
             $registerData = [
                 'name' => Request::get('name'), 
                 'email' => Request::get('email'), 
                 'gender'=> Request::get('gender'),
                 'dob'=> Request::get('dob'),
                 'city'=> Request::get('city'),
-                'pf_image'=> Request::files('pf_image')['name'],
+                'pf_image'=> $dp,
                 'auth_id'=>$auth['id']
             ];
             $this->loadModel('User');
@@ -56,7 +59,8 @@ class Auth extends Controller{
             Request::redirect('/auth/login');
         }
         else{
-            // already exist
+            $alert = ['type'=>'info', 'message'=>"Email is already taken!"];
+            $this->view->loadView('/auth/register', ['alert'=>$alert]); 
         }
     }
     else

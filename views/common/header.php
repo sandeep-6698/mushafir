@@ -12,4 +12,5 @@
   </head>
   <body>
   <?php include_once('views/common/navbar.php'); ?>
-  <div class="container">
+  <?php include_once('views/common/alert.php'); ?>
+  

@@ -4,15 +4,13 @@ class Booking extends Controller{
      Parent::__construct();
     }
     public function index(){
-      echo Session::get('name');
-      $this->view->loadView('/booking/index');   
+      $this->view->loadAdminView('/booking/index');   
     }
     public function create(){
-      Session::set('name', 'sandeep');
-      $this->view->loadView('/booking/create'); 
+      $this->view->loadAdminView('/booking/create'); 
     }
     public function update($id=0){
-      $this->view->loadView('/booking/edit');    
+      $this->view->loadAdminView('/booking/edit');    
     }
     public function delete($id=0){
       Session::delete('name');
