@@ -4,7 +4,7 @@ class Cites extends Controller{
      Parent::__construct();
     }
     public function index(){
-        $this->view->loadAdminView("cities/index");
+        $this->view->loadView("cities/index");
     }
   }
 ?>

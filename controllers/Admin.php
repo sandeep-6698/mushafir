@@ -4,7 +4,7 @@ class Admin extends Controller{
      Parent::__construct();
     }
     public function index(){
-        $this->view->loadAdminView("admin/index");
+        $this->view->loadView("admin/index");
     }
   }
 ?>

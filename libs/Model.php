@@ -3,7 +3,7 @@ class Model extends Database{
     public function __construct(){
         Parent::__construct();
     }
-    public function select($tabel='', $conditions, $fields="*"){
+    public function select($tabel='', $conditions='', $fields="*"){
         $query = "SELECT $fields FROM $tabel ";
         if($tabel){
             if($conditions){
@@ -20,6 +20,7 @@ class Model extends Database{
     public function insert($tabel, $data){
         $query = "INSERT INTO $tabel (";
         $query.= implode(', ', array_keys($data)) . ") VALUES ('". implode("', '", array_values($data))."')";
+        echo $query;
         if ($this->conn->query($query)):
             return true;
         else: 

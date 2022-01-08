@@ -17,3 +17,7 @@
 .side-navbar ul.list-unstyled li a{
     box-shadow: none;
 }
+.layout{
+    height: calc(100vh - 66px);
+    overflow: auto;
+}

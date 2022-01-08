@@ -4,7 +4,7 @@ class Plans extends Controller{
      Parent::__construct();
     }
     public function index(){
-        $this->view->loadAdminView("plans/index");
+        $this->view->loadView("plans/index");
     }
   }
 ?>

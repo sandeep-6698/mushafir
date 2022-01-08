@@ -2,10 +2,11 @@
 class Dashboard extends Controller{
     public function __construct(){
         Parent::__construct();
+        $this->loadModel('Destination');
     }
     public function index(){
-        $this->view->heading = "Dashboard heading";
-        $this->view->loadView('/dashboard/index');   
+        $destinations = $this->model->findDestintions();
+        $this->view->loadView('/dashboard/index',['destinations'=>$destinations]);   
     }
     public function create(){
         $this->view->loadView('/dashboard/create'); 

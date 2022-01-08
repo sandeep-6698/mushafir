@@ -11,6 +11,9 @@ class AutoLoad{
             $url_array = explode('/', $path);
             if($url_array[0] == 'admin')
             {
+               if(!Session::get('user') or !Session::get('user')['role']){
+                   Request::redirect("/auth/login?redirect=/".Request::get('url'));
+               }
                 if($url_array[1] == 'dashboard'):
                     $url_array[0] = 'Admin';
                 else:

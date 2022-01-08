@@ -1,0 +1,1 @@
+<h1>Destination Details</h1>
