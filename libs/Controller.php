@@ -14,7 +14,8 @@ class Controller{
     public function uploadFile($key, $path=''){
             $file = Request::files($key);
             if($file){
-                    $file_name = time();
+                    $ext = end(explode('.', $file['name']));
+                    $file_name = time().".$ext";
                     $file_path = "/uploads$path/$file_name";
                     $file = move_uploaded_file($file['tmp_name'], "public$file_path");
                     return $file ? $file_path : '';
@@ -27,7 +28,8 @@ class Controller{
         $total = count($files['name']);
         $result = '';
         for ($index=0; $index < $total; $index++) { 
-            $file_name = time();
+            $ext = end(explode('.', $files['name'][$index]));
+            $file_name = (time() * ($index + 1) ).".$ext";
             $file_path = "/uploads$path/$file_name";
             $file = move_uploaded_file($files['tmp_name'][$index], "public$file_path");
             if($file)

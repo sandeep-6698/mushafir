@@ -32,7 +32,9 @@ class Destinations extends Controller{
       $this->view->loadView("destinations/update");
     }
     public function details($id){
-      $this->view->loadView("destinations/details");
+      $destination = $this->model->findDestintionById($id);
+      $destination['photos'] =  explode(',', $destination['photos']);
+      $this->view->loadView("destinations/details", ['destination'=> $destination]);
   }
   }
 ?>

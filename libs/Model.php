@@ -3,7 +3,7 @@ class Model extends Database{
     public function __construct(){
         Parent::__construct();
     }
-    public function select($tabel='', $conditions='', $fields="*"){
+    public function select($tabel='', $conditions=null, $fields="*"){
         $query = "SELECT $fields FROM $tabel ";
         if($tabel){
             if($conditions){

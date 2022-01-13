@@ -10,5 +10,8 @@ class DestinationModel extends Model{
     public function save($data){
         return $this->insert($this->table, $data);
     }
+    public function findDestintionById($id){
+        return $this->select($this->table, ['id'=> $id])[0];
+    }
 }
 ?>

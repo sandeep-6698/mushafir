@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-group d-flex align-items-center">
                             <label>
-                                <input required type="checkbox" value="1" name="most_visited" placeholder="Name" />
+                                <input type="checkbox" value="1" name="most_visited" placeholder="Name" />
                                 Most visited
                             </label>
                         </div>

@@ -21,3 +21,6 @@
     height: calc(100vh - 66px);
     overflow: auto;
 }
+#carouselDestinations .carousel-item{
+height: 300px;
+}
