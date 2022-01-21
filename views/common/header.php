@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?php echo STATIC_FILES.'/css/bootstrap.css' ?>">
     <link rel="stylesheet" href="<?php echo STATIC_FILES.'/css/style.css' ?>">
+    <link rel="stylesheet" href="<?php echo STATIC_FILES.'/css/bootstrap.css' ?>">
+    <link rel="stylesheet" href="<?php echo STATIC_FILES.'/fontawesome/css/all.css' ?>">
     <title>Mushafir</title>
   </head>
   <body>

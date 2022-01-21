@@ -24,3 +24,9 @@
 #carouselDestinations .carousel-item{
 height: 300px;
 }
+.fa-trash{
+    color: rgb(223, 63, 63);
+}
+.fa-edit{
+    color: rgb(139, 139, 56);
+}

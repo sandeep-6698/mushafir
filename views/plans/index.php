@@ -21,7 +21,7 @@
                     <td><?php echo $plan['destination']['name']?></td>
                     <td><?php echo $plan['valid_from']; ?></td>
                     <td><?php echo $plan['valid_to']; ?></td>
-                    <td>Delete | Edit</td>
+                    <td><a class="confirmDelete" href="<?php echo BASE_URL.'/admin/plans/delete/'.$plan['id']?>"><i class="fas fa-trash"></i></a> | <i class="fas fa-edit"></i></td>
                 </tr>
                 <?php endforeach; ?>
         </tbody>
