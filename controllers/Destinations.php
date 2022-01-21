@@ -33,8 +33,10 @@ class Destinations extends Controller{
     }
     public function details($id){
       $destination = $this->model->findDestintionById($id);
+      $this->loadModel('Plans');
+      $plans = $this->model->getPlansByDestination($id);
       $destination['photos'] =  explode(',', $destination['photos']);
-      $this->view->loadView("destinations/details", ['destination'=> $destination]);
+      $this->view->loadView("destinations/details", ['destination'=> $destination, 'plans' => $plans]);
   }
   }
 ?>

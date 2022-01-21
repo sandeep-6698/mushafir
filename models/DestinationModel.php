@@ -4,8 +4,8 @@ class DestinationModel extends Model{
     public function __construct(){
         Parent::__construct();
     }
-    public function findDestintions(){
-        return $this->select($this->table);
+    public function findDestintions($select="*"){
+        return $this->select($this->table, null, $select);
     }
     public function save($data){
         return $this->insert($this->table, $data);
