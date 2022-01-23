@@ -13,5 +13,8 @@ class DestinationModel extends Model{
     public function findDestintionById($id){
         return $this->select($this->table, ['id'=> $id])[0];
     }
+    public function deleteDestination($id){
+        return $this->delete($this->table, $id);
+    }
 }
 ?>

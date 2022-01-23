@@ -11,7 +11,7 @@ class Plans extends Controller{
     public function create(){
       if(Request::get('name')){
         $this->model->save(Request::getAll('POST'));
-        Request::redirect('/admin/plans');
+        Request::redirect('/plans');
       }
       else{
         $this->loadModel('Destination');
@@ -19,5 +19,15 @@ class Plans extends Controller{
         $this->view->loadView("plans/create", ['destinations' => $destinations]);
       }
   }
+
+  public function delete($id){
+    $deleted = $this->model->deletePlan($id);
+    if($deleted)
+      Request::redirect('/plans');
+    else
+      $alert = ['type'=>'danger', 'message'=>"Something went wrong!"];
+      $this->view->loadView('/plans/index', ['alert'=>$alert]); 
+  }
+
   }
 ?>

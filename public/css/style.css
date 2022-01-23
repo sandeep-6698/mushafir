@@ -30,3 +30,20 @@ height: 300px;
 .fa-edit{
     color: rgb(139, 139, 56);
 }
+.dest_delete{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -ms-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+}
+.dest_delete:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}

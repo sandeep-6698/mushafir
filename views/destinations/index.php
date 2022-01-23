@@ -9,6 +9,9 @@
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-4">
             <div class="card">
                 <img class="card-img-top" height= "200px" src="<?php echo STATIC_FILES.$destination['thumbnail']?>" alt="city-image"/>
+                <?php if($this->isAdmin):  ?>
+                    <a class="confirmDelete dest_delete" href="<?php echo BASE_URL.'/admin/destinations/delete/'.$destination['id']?>"><i class="fas fa-trash"></i></a>
+                <?php endif;?>
                 <div class="card-body p-2">
                     <h5><?php echo $destination['name']?></h5>
                     <p><?php echo $destination['short_des']?></p>

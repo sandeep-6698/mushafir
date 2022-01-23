@@ -21,7 +21,11 @@ class Request{
             return null;
     }
     public static function redirect($url = ''){
-        header("Location: ".BASE_URL.$url);
+         $url_array = explode('/', Request::get('url'));
+         if($url_array[0] == 'admin')
+            header("Location: ".BASE_URL."/admin$url");
+         else
+            header("Location: ".BASE_URL.$url);
     }
 }
 ?>

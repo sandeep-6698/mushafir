@@ -23,7 +23,7 @@ class Destinations extends Controller{
                 'description'=> Request::get('description'),
             ];
             $this->model->save($destination);
-            Request::redirect('/admin/destinations');
+            Request::redirect('/destinations');
       }
       else
       $this->view->loadView("destinations/create");
@@ -37,6 +37,15 @@ class Destinations extends Controller{
       $plans = $this->model->getPlansByDestination($id);
       $destination['photos'] =  explode(',', $destination['photos']);
       $this->view->loadView("destinations/details", ['destination'=> $destination, 'plans' => $plans]);
-  }
+    }
+
+    public function delete($id){
+      $deleted = $this->model->deleteDestination($id);
+      if($deleted)
+        Request::redirect('/destinations');
+      else
+        $alert = ['type'=>'danger', 'message'=>"Something went wrong!"];
+        $this->view->loadView('/destinations/index', ['alert'=>$alert]); 
+    }
   }
 ?>

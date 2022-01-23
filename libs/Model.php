@@ -38,5 +38,13 @@ class Model extends Database{
         }
         return [];
     }
+
+    public function delete($tabel, $id){
+        if($tabel and $id){
+            $query = "DELETE FROM $tabel WHERE id=$id";
+            return $this->conn->query($query);
+        }
+        return false;
+    }
 }
 ?>

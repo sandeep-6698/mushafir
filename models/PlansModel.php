@@ -15,5 +15,8 @@ class PlansModel extends Model{
     public function getPlansByDestination($destination){
         return $this->select($this->table, ['destination' => $destination]);
     }
+    public function deletePlan($id){
+        return $this->delete($this->table, $id);
+    }
 }
 ?>

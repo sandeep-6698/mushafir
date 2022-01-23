@@ -2,6 +2,7 @@
 class View{
     public function loadView($filename, $data=[], $header=true, $footer=true){
         $isAdminRoute = strpos("/".Request::get('url'), 'admin');
+        $this->isAdmin = $isAdminRoute;
         foreach($data as $key=>$value){
             $this->$key = $value;
         }
