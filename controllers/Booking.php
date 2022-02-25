@@ -8,7 +8,7 @@ class Booking extends Controller{
       $bookings = $this->model->getBookingByUser(Session::get('user')['id']);
       $this->view->loadView('/booking/index', ['bookings' => $bookings]);   
     }
-    public function create(){
+    public function create($destination){
       if(Request::get('plan')){
         $res = $this->model->createBooking(Request::getAll('POST'));
         if($res);
@@ -16,7 +16,10 @@ class Booking extends Controller{
       }
       else{
         $this->loadModel('Plans');
-        $plans = $this->model->getPlans();
+        if($destination)
+          $plans = $this->model->getPlansByDestination($destination);
+        else
+          $plans = $this->model->getPlans();
         $this->view->loadView('/booking/create', ["plans"=> $plans]); 
       }
     }
@@ -30,7 +33,7 @@ class Booking extends Controller{
       $this->view->loadView('/booking/confirm');    
     }
     public function cancel($id=0){
-      $this->model->cancelBooking($id);
+      $this->model->changeStauts($id, 'canceled');
       Request::redirect('/booking');   
     }
 }

@@ -15,8 +15,8 @@ class BookingModel extends Model{
     public function createBooking($data){
         return $this->insert($this->table, $data);
     }
-    public function cancelBooking($id){
-        return $this->update($this->table, ['id'=> $id], ['booking'=> 'cancled']);
+    public function changeStauts($id, $status){
+        return $this->update($this->table, ['id'=> $id], ['status'=> $status]);
     }
 }
 ?>

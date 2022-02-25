@@ -13,7 +13,7 @@ class PlansModel extends Model{
         return $this->insert($this->table, $data);
     }
     public function getPlansByDestination($destination){
-        return $this->select($this->table, ['destination' => $destination]);
+        return $this->select($this->table, ['destination' => $destination], '*', $this->relationTable, $this->relationField, 'id, name');
     }
     public function deletePlan($id){
         return $this->delete($this->table, $id);

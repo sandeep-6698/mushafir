@@ -46,5 +46,20 @@ class Model extends Database{
         }
         return false;
     }
+    public function update($tabel, $conditions = [], $data = []){
+        $query = "UPDATE $tabel SET ";
+        foreach($data as $key => $value){
+            $query.= "`$key`='$value', ";
+        }
+        $query = substr($query, 0, -2);
+        if($conditions){
+            $query.= " WHERE ";
+            foreach($conditions as $key => $value){
+                $query.= "`$key`='$value' AND";
+            }
+            $query = substr($query, 0, -4);
+        }
+        return $this->conn->query($query);
+    }
 }
 ?>

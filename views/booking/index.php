@@ -1,9 +1,4 @@
-<div class="container">
-<div class="row p-2 my-3">
-        <div class="col-12 d-flex justify-content-end">
-            <a href=<?php echo BASE_URL?> class="btn btn-primary">Home</a>
-        </div>
-    </div>
+<div class="container my-4">
     <table class="table table-striped table-bordered">
         <thead>
             <tr>

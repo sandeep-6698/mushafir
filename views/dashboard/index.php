@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-7 d-flex flex-column justify-content-center border-right border-top border-bottom rounded-right">
                     <h5><?php echo $destination['name']?></h5>
-                    <button class="btn btn-sm btn-success w-max">Book now</button>
+                    <a class="btn btn-sm btn-success w-max" href="<?php echo BASE_URL."/booking/create/".$destination['id']?>">Book now</a>
                 </div>
             </div>
         </div>

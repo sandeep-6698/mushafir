@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container my-4">
     <div class="card">
         <div class="card-header">
             <h3>Create booking</h3>
@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <label for="plan">Plan:</label>
                     <br />
-                    <?php foreach($this->plans as $plan): ?>
+                    <?php if(count($this->plans)): foreach($this->plans as $plan): ?>
                     <label class="row pointer hover-active">
                         <div class="col-1 d-flex align-items-center justify-content-center">
                             <input type="radio" value="<?php echo $plan['id']; ?>" required onchange="calculatePrice()" data-price="<?php echo $plan['price']; ?>" name="plan" />
@@ -35,7 +35,9 @@
                             <p class="mb-0"><strong>Valid to:</strong> <?php echo $plan['valid_to']; ?></p>
                         </div>
                     </label>
-                    <?php endforeach;?>
+                    <?php endforeach; else: ?>
+                        <p class="text-muted ml-4">No plans</p>
+                        <?php endif;?>
                 </div>
                 <div class="form-group">
                     <label for="plan">Price:</label>
