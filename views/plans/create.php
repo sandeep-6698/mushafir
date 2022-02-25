@@ -15,6 +15,10 @@
                     <input required type="text" id="name" placeholder="Name" name="name" class="form-control" />
                 </div>
                 <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input required type="text" id="price" placeholder="Price" name="price" class="form-control" />
+                </div>
+                <div class="form-group">
                     <label for="destination">Destination:</label>
                     <select required id="destination" name="destination" class="form-control">
                       <option value="">Choose destination</option>
@@ -25,11 +29,11 @@
                 </div>
                 <div class="form-group">
                     <label for="from">Valid from:</label>
-                    <input required type="datetime-local" name="valid_from" class="form-control"/>
+                    <input required type="date" name="valid_from" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label required for="from">Valid to:</label>
-                    <input type="datetime-local" name="valid_to" class="form-control"/>
+                    <input type="date" name="valid_to" class="form-control"/>
                 </div>
                 <div class="form-group">
                     <label for="details">Details:</label>

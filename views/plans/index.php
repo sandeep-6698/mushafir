@@ -8,6 +8,7 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Price</th>
                 <th>Destination</th>
                 <th>Valid from</th>
                 <th>Valid to</th>
@@ -18,6 +19,7 @@
             <?php foreach($this->plans as $plan): ?>
                 <tr>
                     <td><?php echo $plan['name']; ?></td>
+                    <td><?php echo $plan['price']; ?></td>
                     <td><?php echo $plan['destination']['name']?></td>
                     <td><?php echo $plan['valid_from']; ?></td>
                     <td><?php echo $plan['valid_to']; ?></td>

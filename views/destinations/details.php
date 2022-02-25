@@ -1,4 +1,5 @@
 <? $photos = $this->destination['photos'];?>
+<div class="container">
 <div class="w-100 mt-4">
 <div id="carouselDestinations" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -43,3 +44,4 @@
             <?php endforeach; ?>
     </tbody>
 </table>
+</div>
