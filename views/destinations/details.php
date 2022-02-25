@@ -39,7 +39,10 @@
                 <td><?php echo $plan['name']; ?></td>
                 <td><?php echo $plan['valid_from']; ?></td>
                 <td><?php echo $plan['valid_to']; ?></td>
-                <td><a class="confirmDelete" href="<?php echo BASE_URL.'/admin/plans/delete/'.$plan['id']?>"><i class="fas fa-trash"></i></a> | <i class="fas fa-edit"></i></td>
+                <td><a class="confirmDelete" href="<?php echo BASE_URL.'/admin/plans/delete/'.$plan['id']?>"><i class="fas fa-trash"></i></a> 
+                | <i class="fas fa-edit"></i>
+                | <a href="<?php echo BASE_URL."/booking/create/".$this->destination['id']."?plan_id=".$plan['id']?> ">Book</a>
+              </td>
             </tr>
             <?php endforeach; ?>
     </tbody>

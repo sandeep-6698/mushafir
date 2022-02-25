@@ -20,6 +20,12 @@ class Booking extends Controller{
           $plans = $this->model->getPlansByDestination($destination);
         else
           $plans = $this->model->getPlans();
+        if(Request::get('plan_id')){
+          function cb($ele){
+            return $ele['id'] == Request::get('plan_id');
+          };
+          $plans = array_filter($plans, "cb");
+        }
         $this->view->loadView('/booking/create', ["plans"=> $plans]); 
       }
     }
