@@ -1,4 +1,7 @@
-<? $photos = $this->destination['photos'];?>
+<?php 
+$photos = $this->destination['photos']; 
+$description = $this->destination['description']; 
+?>
 <div class="container">
 <div class="w-100 mt-4">
 <div id="carouselDestinations" class="carousel slide" data-ride="carousel">
@@ -23,6 +26,17 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+</div>
+      </br>
+      <div class="container text-left">
+    <h2 class="text-info mt-2">Know About This Destination:</h2>
+</div>
+<div class="container text-left">
+<h5><?php echo $description;?></h5>
+</div>
+</br>
+<div class="container text-left">
+    <h2 class="text-info mt-2">Plans Related To This Destination:</h2>
 </div>
 <table class="table table-striped table-bordered my-4">
     <thead>
